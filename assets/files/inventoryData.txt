@@ -1,0 +1,12 @@
+[{
+    "item": "journal",
+    "qty": "1",
+    "size": { "h": "14", "w": "21", "uom": "cm" },
+    "status": "A"
+},
+{
+    "item": "canvas",
+    "qty": "2",
+    "size": { "h": "14", "w": "21", "uom": "cm" },
+    "status": "A"
+}]
