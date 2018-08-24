@@ -13,12 +13,15 @@ fetchDocument = function (err,client){
   
 findCanvas = function(db,callback){
     var inventory = db.collection('inventory');
-    inventory.find({
-     qty:{$elemMatch:{$gt:0,$lt:100}}
+    var cursor = inventory.find({
+     sellers:{$exists:1}
     }).project({
       item:1,status:1,_id:0
-    }).toArray(function(err,docs){
-      console.log(docs);
+    });
+    cursor.forEach(function(err,doc){
+     if(err) throw err;
+       
+     console.log(doc);
     });
     callback();
 }
