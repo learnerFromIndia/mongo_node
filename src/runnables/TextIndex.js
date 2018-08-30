@@ -12,7 +12,7 @@ MongoClient.connect(url,options,(err,client)=>{
        if (err) {throw err;}
 
        console.log('Index Created');
- 
+
        //let cursor = db.collection('stores').find({$text:{$search:"coffee java"}});
 
        let cursor = db.collection('stores').find({$text:{$search:"coffee"}},{score:{$meta:"textScore"}}).sort({score:{$meta:"textScore"}})
